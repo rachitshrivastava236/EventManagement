@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface EventsService {
 
-    public List<Events> getEvents(Events events);
+    public List<Events> getEvents();
 
 }

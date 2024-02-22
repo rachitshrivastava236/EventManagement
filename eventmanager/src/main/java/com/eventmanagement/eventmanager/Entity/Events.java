@@ -6,17 +6,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "EVENTS")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "EVENTS")
 public class Events {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long eventId;
     private String eventName;
-    private String desc;
+    private String description;
     private String startDate;
     private String endDate;
     private String venue;

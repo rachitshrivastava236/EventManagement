@@ -13,7 +13,7 @@ public class EventsServiceImpl implements EventsService{
     @Autowired
     private EventRepository eventRepository;
     @Override
-    public List<Events> getEvents(Events events) {
+    public List<Events> getEvents() {
         List<Events> list = eventRepository.findAll();
         return list;
     }
