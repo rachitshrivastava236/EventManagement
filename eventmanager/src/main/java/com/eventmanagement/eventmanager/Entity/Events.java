@@ -5,19 +5,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
-@Table(name = "USERS")
-public class Users {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "EVENTS")
+public class Events {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
-    private String userName;
-    private String email;
-    private String role;
-    private String password;
-
+    private Long eventId;
+    private String eventName;
+    private String desc;
+    private String startDate;
+    private String endDate;
+    private String venue;
 }
