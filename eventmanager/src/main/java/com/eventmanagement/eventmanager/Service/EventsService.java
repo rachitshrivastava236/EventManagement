@@ -9,4 +9,6 @@ public interface EventsService {
 
     public List<Events> getEvents();
 
+    public void createEvent(Events event);
+
 }
