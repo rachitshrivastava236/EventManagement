@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+
+   input =""
+
+   createStudent = new FormGroup({
+    eventName : new FormControl(''),
+    eventDescription : new FormControl('')
+   })
+
+   createUser(){
+    console.log(this.createStudent.value)
+   }
+    
+
+  
 
 }
