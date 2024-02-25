@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.swing.text.html.parser.Entity;
+import java.text.ParseException;
 import java.util.List;
 
 @RestController
@@ -25,8 +25,7 @@ public class EventsController {
     }
 
     @PostMapping(path = "/createEvent")
-    public ResponseEntity<?> createUser(@RequestBody Events event){
-        System.out.println(event.getEventName());
+    public ResponseEntity<?> createUser(@RequestBody Events event) throws ParseException {
         eventsService.createEvent(event);
         return ResponseEntity.status(HttpStatus.CREATED).body("New Event Created : " + event.getEventId());
     }
