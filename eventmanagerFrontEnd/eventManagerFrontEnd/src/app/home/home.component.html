@@ -1,8 +1,9 @@
 
-<br>
-<br>
-<div class = "container">
-    <form [formGroup]="createStudent" (ngSubmit)="createUser()">
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <form [formGroup]="createStudent" (ngSubmit)="createUser()">
         <div>
           <label >Event Name</label>
           <input type="text" class="form-control" placeholder="Event name" formControlName="eventName">
@@ -11,6 +12,47 @@
             <label >Event Description</label>
             <input type="text" class="form-control" placeholder="Event Description" formControlName="eventDescription">
           </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+          <div>
+            <label >Event Start Date</label>
+            <input type="date" class="form-control" placeholder="Event Start Date" formControlName="startDate">
+          </div>
+          <div>
+            <label >Event End Date</label>
+            <input type="date" class="form-control" placeholder="Event End Date" formControlName="endDate">
+          </div>
+          <div>
+            <label >Venue</label>
+            <input type="text" class="form-control" placeholder="Event Venue" formControlName="venue">
+          </div>
+          <div class="btn">
+            <button [disabled]="!createStudent.valid" type="submit" class="btn btn-primary">Submit</button>
+          </div>
       </form>
+    </div>
+    <div class="col-4" >
+      <div >
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Event ID</th>
+              <th scope="col">Event Name</th>
+              <th scope="col">Event Description</th>
+              <th scope="col">Event Venue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let e of events">
+              <th scope="row">{{e.eventId}}</th>
+              <td>{{e.eventName}}</td>
+              <td>{{e.description}}</td>
+              <td>{{e.venue}}</td>
+            </tr>
+          
+          </tbody>
+        </table>
+      </div>
+      
+      
+    </div>
+  </div>
 </div>
